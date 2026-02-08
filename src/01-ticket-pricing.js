@@ -36,7 +36,7 @@ export function getTicketPrice(age, isWeekend) {
     }
     return ticket;
   }
-  if ( age <= 12) {
+  else if ( age <= 12) {
     ticket = 8;
     if (isWeekend == true) {
       let total = ticket + 3;
@@ -44,7 +44,7 @@ export function getTicketPrice(age, isWeekend) {
     }
     return ticket;
   }
-  if (age >= 13 && age <= 17) {
+  else if (age >= 13 && age <= 17) {
     ticket = 12;
     if (isWeekend == true) {
       let total = ticket + 3;
@@ -52,7 +52,7 @@ export function getTicketPrice(age, isWeekend) {
     }
     return ticket;
   }
-  if (age >= 18 && age <= 59) {
+  else if (age >= 18 && age <= 59) {
     ticket = 15;
     if (isWeekend == true) {
       let total = ticket + 3;
@@ -60,7 +60,7 @@ export function getTicketPrice(age, isWeekend) {
     }
     return ticket;
   }
-  if (age >= 60) {
+  else if (age >= 60) {
     ticket = 10;
     if (isWeekend == true) {
       let total = ticket + 3;
@@ -68,7 +68,7 @@ export function getTicketPrice(age, isWeekend) {
     }
     return ticket;
   }
-  if (isWeekend == true) {
+  else if (isWeekend == true) {
     return (ticket = ticket + 3);
   }
 }
