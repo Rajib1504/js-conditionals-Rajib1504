@@ -26,4 +26,25 @@
  */
 export function calculateGrade(score, hasExtraCredit) {
   // Your code here
+  let message = "";
+  let totalScore = score;
+  if (totalScore < 0 || totalScore > 100) {
+    return "INVALID";
+  }
+  if (hasExtraCredit) {
+    totalScore = Math.min(100, score + 5);
+  }
+
+  if (totalScore <= 59 && totalScore >=0) {
+    return "F";
+  } else if (totalScore <= 69) {
+    message = "D";
+  } else if (totalScore <= 79) {
+    message = "C";
+  } else if (totalScore <= 89) {
+    message = "B";
+  } else if (totalScore <= 100) {
+    message = "A";
+  }
+  return message;
 }
