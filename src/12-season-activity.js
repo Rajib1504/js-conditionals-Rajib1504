@@ -32,4 +32,93 @@
  */
 export function getSeasonActivity(month, temperature) {
   // Your code here
+  if (month < 1 && month < 12) {
+    return null;
+  }
+  let season = "";
+  // let monthName = "";
+  // switch (month) {
+  //   case 1:
+  //     monthName = "January";
+  //     break;
+  //   case 2:
+  //     monthName = "February";
+  //     break;
+  //   case 3:
+  //     monthName = "March";
+  //     break;
+  //   case 4:
+  //     monthName = "April";
+  //     break;
+  //   case 5:
+  //     monthName = "May";
+  //     break;
+  //   case 6:
+  //     monthName = "June";
+  //     break;
+  //   case 7:
+  //     monthName = "July";
+  //     break;
+  //   case 8:
+  //     monthName = "August";
+  //     break;
+  //   case 9:
+  //     monthName = "September";
+  //     break;
+  //   case 10:
+  //     monthName = "October";
+  //     break;
+  //   case 11:
+  //     monthName = "November";
+  //     break;
+  //   case 12:
+  //     monthName = "December";
+  //     break;
+
+  //   default:
+  //     break;
+  // }
+  if (month === 12 || month === 1 || month === 2) {
+    season = "Winter";
+  } else if (month === 3 || month === 4 || month === 5) {
+    season = "Spring";
+  } else if (month === 6 || month === 7 || month === 8) {
+    season = "Summer";
+  } else if (month === 9 || month === 10 || month === 11) {
+    season = "Autumn";
+  }
+
+  let activeties = {
+    season: "",
+    activity: "",
+  };
+
+  if (season === "Winter" && temperature < 0) {
+    activeties.season = season;
+    activeties.activity = "skiing";
+  } else if (season === "Winter" && temperature >= 0) {
+    activeties.season = season;
+    activeties.activity = "ice skating";
+  } else if (season === "Spring" && temperature > 20) {
+    activeties.season = season;
+    activeties.activity = "hiking";
+  } else if (season === "Spring" && temperature <= 20) {
+    activeties.season = season;
+    activeties.activity = "museum visit";
+  } else if (season === "Summer" && temperature > 35) {
+    activeties.season = season;
+    activeties.activity = "swimming";
+  } else if (season === "Summer" && temperature <= 35) {
+    activeties.season = season;
+    activeties.activity = "cycling";
+  } else if (season === "Autumn" && temperature > 15) {
+    activeties.season = season;
+    activeties.activity = "nature walk";
+  } else if (season === "Autumn" && temperature <= 15) {
+    activeties.season = season;
+    activeties.activity = "reading at a cafe";
+  } else {
+    return null;
+  }
+  return activeties;
 }
